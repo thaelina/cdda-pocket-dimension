@@ -1,0 +1,58 @@
+[
+  {
+    "id": "THAE_HOME_DIMENSION",
+    "type": "json_flag",
+    "name": ""
+  },
+  {
+    "type": "region_settings",
+    "id": "thae_home_dimension",
+    "rivers": null,
+    "lakes": null,
+    "ocean": null,
+    "ravines": null,
+    "forests": null,
+    "forest_composition": "no_forests",
+    "forest_trails": null,
+    "highways": null,
+    "cities": "no_cities",
+    "map_extras": "no_map_extras",
+    "terrain_furniture": "default",
+    "weather": "default",
+    "place_roads": false,
+    "place_specials": true,
+    "default_oter": [
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "open_air",
+      "thae_home_field",
+      "solid_earth",
+      "empty_rock",
+      "empty_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock",
+      "deep_rock"
+    ],
+    "default_groundcover": [ [ "t_region_groundcover", 1 ] ],
+    "feature_flag_settings": { "blacklist": [  ], "whitelist": [ "THAE_HOME_DIMENSION" ] },
+    "connections": {
+      "intra_city_road_connection": "local_road",
+      "inter_city_road_connection": "local_road",
+      "trail_connection": "forest_trail",
+      "sewer_connection": "sewer_tunnel",
+      "subway_connection": "subway_tunnel",
+      "rail_connection": "local_railroad"
+    }
+  }
+]

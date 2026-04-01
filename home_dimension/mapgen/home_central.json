@@ -1,0 +1,153 @@
+[
+  {
+    "type": "palette",
+    "id": "thae_home_dimension_palette",
+    "terrain": {
+      " ": "t_open_air",
+      "Γ": "t_ladder_down",
+      "|": "t_ladder_up_down",
+      "L": "t_ladder_up",
+      "$": "t_carpet_strconcrete_yellow",
+      "-": "t_carpet_strconcrete_purple",
+      "=": "t_carpet_strconcrete_green",
+      ".": "t_strconc_floor",
+      "+": "t_door_metal_c",
+      "#": "t_strconc_wall",
+      "W": "t_reinforced_glass_shutter_open",
+      "R": "t_concrete_roof",
+      "G": "t_glass_roof"
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": "thae_home_central_roof_small",
+    "object": {
+      "rows": [
+        "          RRRR          ",
+        "          RRRR          ",
+        "          RRRR          ",
+        "          RRRR          ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        ",
+        "                        "
+      ],
+      "palettes": [ "thae_home_dimension_palette" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": "thae_home_central_roof",
+    "object": {
+      "rows": [
+        "RRRRRRRRRR####RRRRRRRRRR",
+        "RRRRRRRRRRWΓΓWRRRRRRRRRR",
+        "RRRRRRRRRR+ΓΓ+RRRRRRRRRR",
+        "RRRRRRRRRR####RRRRRRRRRR",
+        "RRRRRRRRRRRRRRRRRRRRRRRR",
+        "RRRRRRRRRRRRRRRRRRRRRRRR",
+        "RRRRRRRRRRRRRRRRRRRRRRRR",
+        "RRRRRRRRRRRRRRRRRRRRRRRR",
+        "RRRRRRRRRRRRRRRRRRRRRRRR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RGGGGGGGGGGGGGGGGGGGGGGR",
+        "RRRRRRRRRRRRRRRRRRRRRRRR"
+      ],
+      "palettes": [ "thae_home_dimension_palette" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": "thae_home_central_ground_level",
+    "object": {
+      "rows": [
+        "###########++###WWWWWWWW",
+        "#..........||..#=======W",
+        "#..........||..#=-----=W",
+        "#..............#=-----=W",
+        "#..............+=--$--=W",
+        "#..............#=-----=W",
+        "#..............#=-----=W",
+        "#..............#=======W",
+        "###########++###########",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#WWWWWWWWWWWWWWWWWWWWWW#"
+      ],
+      "palettes": [ "thae_home_dimension_palette" ]
+    }
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": "thae_home_central_basement_level",
+    "object": {
+      "rows": [
+        "########################",
+        "#..........LL..........#",
+        "#..........LL..........#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "#......................#",
+        "########################"
+      ],
+      "palettes": [ "thae_home_dimension_palette" ]
+    }
+  }
+]

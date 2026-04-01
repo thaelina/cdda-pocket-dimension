@@ -1,0 +1,31 @@
+[
+  {
+    "type": "overmap_terrain",
+    "id": [
+      "thae_home_central_roof_small",
+      "thae_home_central_roof",
+      "thae_home_central_ground_level",
+      "thae_home_central_basement_level"
+    ],
+    "name": "Home Central",
+    "sym": "#",
+    "color": "white",
+    "looks_like": "field",
+    "mondensity": 0,
+    "see_cost": "low"
+  },
+  {
+    "type": "overmap_special",
+    "id": "thae_home_central",
+    "overmaps": [
+      { "point": [ 0, 0, 2 ], "overmap": "thae_home_central_roof_small_north" },
+      { "point": [ 0, 0, 1 ], "overmap": "thae_home_central_roof_north" },
+      { "point": [ 0, 0, 0 ], "overmap": "thae_home_central_ground_level_north" },
+      { "point": [ 0, 0, -1 ], "overmap": "thae_home_central_basement_level_north" }
+    ],
+    "locations": [ "thae_home_field" ],
+    "occurrences": [ 100, 100 ],
+    "rotate": false,
+    "flags": [ "THAE_HOME_DIMENSION", "SAFE_AT_WORLDGEN", "GLOBALLY_UNIQUE" ]
+  }
+]

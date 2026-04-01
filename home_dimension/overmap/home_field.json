@@ -1,0 +1,16 @@
+[
+  {
+    "type": "overmap_location",
+    "id": "thae_home_field",
+    "terrains": [ "thae_home_field" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "thae_home_field",
+    "copy-from": "generic_open_land",
+    "name": "field",
+    "sym": ".",
+    "color": "brown",
+    "flags": [ "NO_ROTATE" ]
+  }
+]

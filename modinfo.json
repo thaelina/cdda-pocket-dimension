@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "cdda-pocket-dimension",
+    "name": "Pocket Dimension",
+    "authors": [ "thaelina" ],
+    "description": "Pocket dimension you can retreat to from anywhere.",
+    "category": "misc_additions",
+    "dependencies": [ "dda" ],
+    "conflicts": [ "skyisland" ]
+  }
+]

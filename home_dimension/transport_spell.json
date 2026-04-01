@@ -1,0 +1,106 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_THAE_TELEPORT_HOME_GAME_START",
+    "eoc_type": "EVENT",
+    "required_event": "game_start",
+    "effect": { "math": [ "u_spell_exp('thae_teleport_home') = 0" ] }
+  },
+  {
+    "id": "thae_teleport_home",
+    "type": "SPELL",
+    "name": "Dimensional Walk",
+    "description": "Contenctrate for ten minutes to travel the dimensions between wherever you are and a home pocket dimension.",
+    "valid_targets": [ "self" ],
+    "spell_class": "NONE",
+    "flags": [ "NO_EXPLOSION_SFX", "NO_FAIL", "NO_LEGS", "NO_HANDS" ],
+    "difficulty": 0,
+    "min_damage": 1,
+    "max_damage": 1,
+    "duration_increment": 1,
+    "effect": "effect_on_condition",
+    "effect_str": "EOC_THAE_TELEPORT_HOME",
+    "shape": "blast",
+    "energy_source": "NONE",
+    "base_energy_cost": 0,
+    "final_energy_cost": 0,
+    "base_casting_time": 60000,
+    "final_casting_time": 60000
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_THAE_TELEPORT_HOME",
+    "condition": { "or": [ { "current_dimension": "thae_home_dimension" }, { "current_dimension": "" } ] },
+    "effect": [
+      {
+        "if": { "current_dimension": "thae_home_dimension" },
+        "then": { "run_eocs": [ "EOC_THAE_TELEPORT_HOME_LEAVING_HOME" ] },
+        "else": { "run_eocs": [ "EOC_THAE_TELEPORT_HOME_ENTERING_HOME" ] }
+      }
+    ],
+    "false_effect": [ { "u_message": "You cannot find passage through the dimensions!", "type": "bad", "popup": true } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_THAE_TELEPORT_HOME_ENTERING_HOME",
+    "effect": [
+      { "u_location_variable": { "u_val": "thae_home_dimension_entered_from_pos" } },
+      { "dimension_name": { "u_val": "thae_home_dimension_entered_from_dimension" } },
+      {
+        "u_travel_to_dimension": "thae_home_dimension",
+        "item_travel_radius": 3,
+        "region_type": "thae_home_dimension"
+      },
+      {
+        "if": { "math": [ "thae_home_dimension_entered_at_least_once != 1" ] },
+        "then": { "run_eocs": [ "EOC_THAE_TELEPORT_HOME_ENTERING_HOME_FIRST_ARRIVAL" ] }
+      },
+      {
+        "u_map_run_item_eocs": "all",
+        "min_radius": 0,
+        "max_radius": 5,
+        "true_eocs": [
+          {
+            "id": "EOC_THAE_TELEPORT_HOME_ENTERING_HOME_TELEPORT_ITEMS",
+            "effect": [ { "npc_teleport": { "u_val": "thae_home_dimension_central_pos" } } ]
+          }
+        ]
+      },
+      { "u_teleport": { "u_val": "thae_home_dimension_central_pos" }, "force_safe": true }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_THAE_TELEPORT_HOME_LEAVING_HOME",
+    "effect": [
+      { "u_teleport": { "u_val": "thae_home_dimension_entered_from_pos" }, "force_safe": true },
+      { "u_travel_to_dimension": { "u_val": "thae_home_dimension_entered_from_dimension" } }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_THAE_TELEPORT_HOME_ENTERING_HOME_FIRST_ARRIVAL",
+    "effect": [
+      { "u_location_variable": { "u_val": "thae_home_dimension_first_arrival_temp" } },
+      {
+        "u_location_variable": { "u_val": "thae_home_dimension_central_pos" },
+        "target_params": { "om_terrain": "thae_home_central_ground_level", "min_distance": 0, "z": 0 }
+      },
+      { "u_teleport": { "u_val": "thae_home_dimension_central_pos" }, "force_safe": true },
+      {
+        "u_map_run_eocs": "EOC_THAE_TELEPORT_HOME_ENTERING_HOME_FIRST_ARRIVAL_BLANK",
+        "range": 24,
+        "stop_at_first": true,
+        "store_coordinates_in": { "u_val": "thae_home_dimension_central_pos" },
+        "condition": { "map_terrain_id": "t_carpet_strconcrete_yellow", "loc": { "u_val": "thae_home_dimension_central_pos" } }
+      },
+      { "u_teleport": { "u_val": "thae_home_dimension_first_arrival_temp" }, "force_safe": true },
+      { "math": [ "thae_home_dimension_entered_at_least_once = 1" ] }
+    ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_THAE_TELEPORT_HOME_ENTERING_HOME_FIRST_ARRIVAL_BLANK",
+    "effect": [  ]
+  }
+]
