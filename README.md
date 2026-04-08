@@ -13,3 +13,6 @@ This is not a way to escape hordes or any other dangerous situation. The other d
 - You can shift items on the ground around you *to* the home dimension but not *from* the home dimension.
 - If you shift items to the home dimension above or below z-level 0, they will probably not make it there with you.
 - You will always appear in the same spot when shifting to the home dimension.
+
+
+### This is provided as-s. I am not interested in maintaining the mod, it is solely here so it is available for others to use however they want.
